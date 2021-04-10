@@ -1,7 +1,8 @@
+import { Injectable } from '@angular/core';
+
 import { Store, StoreConfig } from '@datorama/akita';
 
 import { Todo } from 'src/app/todo.model';
-import { Injectable } from '@angular/core';
 
 export interface TodoState {
   todos: Todo[];
