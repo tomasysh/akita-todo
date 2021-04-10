@@ -1,0 +1,11 @@
+<p>home works!</p>
+<button type="button" (click)="addTodo()">add</button>
+<button type="button" (click)="deleteTodo()">delete</button>
+<button type="button" (click)="updateTodo()">update</button>
+
+
+
+<ng-container *ngIf="todos$ | async as todos">
+  {{ todos | json }}
+</ng-container>
+
