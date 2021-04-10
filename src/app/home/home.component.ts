@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { ApiService } from 'src/app/api.service';
 import { Todo } from 'src/app/todo.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
   todos$: Observable<Todo[]>;
 
   constructor(
+    private router: Router,
     private apiService: ApiService
   ) { }
 
@@ -23,7 +25,8 @@ export class HomeComponent implements OnInit {
   }
 
   addTodo() {
-    this.apiService.addTodo('hello', 'world');
+    // this.apiService.addTodo('hello', 'world');
+    this.router.navigateByUrl('/add-todo')
   }
 
   deleteTodo() {
