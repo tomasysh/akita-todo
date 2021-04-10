@@ -10,11 +10,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 
-import { environment } from '../environments/environment';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AddTodoComponent } from './add-todo/add-todo.component';
+import { environment } from 'src/environments/environment';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { AppComponent } from 'src/app/app.component';
+import { HomeComponent } from 'src/app/home/home.component';
+import { AddTodoComponent } from 'src/app/add-todo/add-todo.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({

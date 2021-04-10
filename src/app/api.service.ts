@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-import { Todo } from 'src/app/todo.model';
+import { Todo, TodoStatus } from 'src/app/todo.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,13 @@ export class ApiService {
   ) {}
 
   addTodo(title: string, description: string): Observable<Todo> {
-    return this.http.post<Todo>('http://localhost:3000/todos', {title, description, id: '3'});
+    const newTodo = {
+      title,
+      description,
+      id: new Date(),
+      status: TodoStatus.OPEN
+    };
+    return this.http.post<Todo>('http://localhost:3000/todos', newTodo);
   }
 
   getTodos(): Observable<Todo[]> {
@@ -26,7 +32,7 @@ export class ApiService {
   }
 
   updateTodo(id: string, chagnes: Todo): Observable<Todo> {
-    return this.http.put<Todo>(`http://localhost:3000/todos/${id}`, chagnes);
+    return this.http.patch<Todo>(`http://localhost:3000/todos/${id}`, chagnes);
   }
 
 }

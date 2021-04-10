@@ -1,6 +1,11 @@
 export interface Todo {
-  id?: string;
+  id: string;
   title: string;
   description: string;
-  status?: string;
+  status: TodoStatus;
+}
+
+export enum TodoStatus {
+  OPEN = 'open',
+  DONE = 'done'
 }
